@@ -9,5 +9,14 @@
         android:id="@+id/startOrderFragment"
         android:name="com.example.lunchtray.StartOrderFragment"
         android:label="fragment_start_order"
-        tools:layout="@layout/fragment_start_order" />
+        tools:layout="@layout/fragment_start_order" >
+        <action
+            android:id="@+id/action_startOrderFragment_to_entreeFragment"
+            app:destination="@id/entreeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/entreeFragment"
+        android:name="com.example.lunchtray.EntreeFragment"
+        android:label="fragment_entree"
+        tools:layout="@layout/fragment_entree" />
 </navigation>

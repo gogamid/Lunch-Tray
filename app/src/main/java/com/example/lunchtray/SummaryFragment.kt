@@ -8,29 +8,31 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
 import com.example.lunchtray.databinding.FragmentSideDishBinding
+import com.example.lunchtray.databinding.FragmentSummaryBinding
 
 
-class SideDishFragment : Fragment() {
-  private lateinit var binding: FragmentSideDishBinding
+class SummaryFragment : Fragment() {
+
+  private lateinit var binding: FragmentSummaryBinding
   override fun onCreateView(
     inflater: LayoutInflater, container: ViewGroup?,
     savedInstanceState: Bundle?
   ): View? {
-    binding = DataBindingUtil.inflate(inflater, R.layout.fragment_side_dish, container, false)
+    // Inflate the layout for this fragment
+    binding = DataBindingUtil.inflate(inflater, R.layout.fragment_summary, container, false)
     return binding.root
   }
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
-    binding.sideDishFragment = this
+    binding.summaryFragment = this
   }
 
-  fun nextScreen() {
-    this.findNavController().navigate(R.id.action_sideDishFragment_to_accompanimentFragment)
+  fun submitOrder() {
+    this.findNavController().navigate(R.id.action_summaryFragment_to_startOrderFragment)
   }
 
   fun cancelOrder() {
-    this.findNavController().navigate(R.id.action_sideDishFragment_to_startOrderFragment)
+    this.findNavController().navigate(R.id.action_summaryFragment_to_startOrderFragment)
   }
-
 }

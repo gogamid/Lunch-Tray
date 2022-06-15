@@ -31,6 +31,11 @@ class AccompanimentFragment : Fragment() {
   }
 
   fun nextScreen() {
+    this.findNavController().navigate(R.id.action_accompanimentFragment_to_summaryFragment)
+  }
+
+  fun cancelOrder() {
+    this.findNavController().navigate(R.id.action_accompanimentFragment_to_startOrderFragment)
   }
 
 }

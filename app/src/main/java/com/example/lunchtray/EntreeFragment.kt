@@ -30,4 +30,8 @@ class EntreeFragment : Fragment() {
     this.findNavController().navigate(R.id.action_entreeFragment_to_sideDishFragment)
   }
 
+  fun cancelOrder() {
+    this.findNavController().navigate(R.id.action_entreeFragment_to_startOrderFragment)
+  }
+
 }

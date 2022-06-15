@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_entreeFragment_to_sideDishFragment"
             app:destination="@id/sideDishFragment" />
+        <action
+            android:id="@+id/action_entreeFragment_to_startOrderFragment"
+            app:destination="@id/startOrderFragment" />
     </fragment>
     <fragment
         android:id="@+id/sideDishFragment"
@@ -31,9 +34,27 @@
         <action
             android:id="@+id/action_sideDishFragment_to_accompanimentFragment"
             app:destination="@id/accompanimentFragment" />
+        <action
+            android:id="@+id/action_sideDishFragment_to_startOrderFragment"
+            app:destination="@id/startOrderFragment" />
     </fragment>
     <fragment
         android:id="@+id/accompanimentFragment"
         android:name="com.example.lunchtray.AccompanimentFragment"
-        android:label="AccompanimentFragment" />
+        android:label="AccompanimentFragment" >
+        <action
+            android:id="@+id/action_accompanimentFragment_to_summaryFragment"
+            app:destination="@id/summaryFragment" />
+        <action
+            android:id="@+id/action_accompanimentFragment_to_startOrderFragment"
+            app:destination="@id/startOrderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/summaryFragment"
+        android:name="com.example.lunchtray.SummaryFragment"
+        android:label="SummaryFragment" >
+        <action
+            android:id="@+id/action_summaryFragment_to_startOrderFragment"
+            app:destination="@id/startOrderFragment" />
+    </fragment>
 </navigation>

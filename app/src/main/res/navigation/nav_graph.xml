@@ -18,5 +18,14 @@
         android:id="@+id/entreeFragment"
         android:name="com.example.lunchtray.EntreeFragment"
         android:label="fragment_entree"
-        tools:layout="@layout/fragment_entree" />
+        tools:layout="@layout/fragment_entree" >
+        <action
+            android:id="@+id/action_entreeFragment_to_sideDishFragment"
+            app:destination="@id/sideDishFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sideDishFragment"
+        android:name="com.example.lunchtray.SideDishFragment"
+        android:label="fragment_side_dish"
+        tools:layout="@layout/fragment_side_dish" />
 </navigation>

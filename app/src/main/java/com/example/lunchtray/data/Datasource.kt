@@ -6,7 +6,7 @@ import com.example.lunchtray.model.SideDish
 
 class Datasource {
 
-  fun getEntree(): List<Entree> = listOf(
+  fun getEntrees(): List<Entree> = listOf(
     Entree(
       "Cauliflower",
       "Whole cauliflour, brined, roasted, and deeo fried",
@@ -30,7 +30,7 @@ class Datasource {
     )
   )
 
-  fun getSideDish(): List<SideDish> = listOf(
+  fun getSideDishes(): List<SideDish> = listOf(
     SideDish(
       "Summer Salad",
       "dasjkljflöjdslöfajöksadljöl",
@@ -53,7 +53,7 @@ class Datasource {
     )
   )
 
-  fun getAccompaniment(): List<Accompaniment> = listOf(
+  fun getAccompaniments(): List<Accompaniment> = listOf(
     Accompaniment(
       "Lunch Roll",
       "dsahfash",

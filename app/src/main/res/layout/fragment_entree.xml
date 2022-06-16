@@ -9,6 +9,10 @@
             name="entreeFragment"
             type="com.example.lunchtray.EntreeFragment" />
 
+        <variable
+            name="viewModel"
+            type="com.example.lunchtray.model.OrderViewModel" />
+
     </data>
 
     <ScrollView
@@ -30,77 +34,95 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <RadioButton
-                    android:id="@+id/radioButton"
+                    android:id="@+id/entree_0"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="RadioButton" />
+                    android:checked="@{viewModel.entree.equals(viewModel.entrees[0])}"
+                    android:onClick="@{() -> viewModel.setEntree(viewModel.entrees[0])}"
+                    android:text="@{viewModel.entrees[0].name}"
+                    tools:text="Cauliflour" />
 
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/ing_0"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:layout_marginStart="10dp"
+                    android:text="@{viewModel.entrees[0].ingredients}"
+                    tools:text="Ingredients" />
 
                 <TextView
-                    android:id="@+id/textView3"
+                    android:id="@+id/price_0"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:layout_marginStart="10dp"
+                    android:text="@{String.valueOf(viewModel.entrees[0].price)}"
+                    tools:text="7.0" />
 
                 <RadioButton
-                    android:id="@+id/radioButton2"
+                    android:id="@+id/entree_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="RadioButton" />
+                    android:checked="@{viewModel.entree.equals(viewModel.entrees[1])}"
+                    android:onClick="@{() -> viewModel.setEntree(viewModel.entrees[1])}"
+                    android:text="@{viewModel.entrees[1].name}" />
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/ing_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:layout_marginStart="10dp"
+                    android:text="@{viewModel.entrees[1].ingredients}" />
 
                 <TextView
-                    android:id="@+id/textView5"
+                    android:id="@+id/price_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:layout_marginStart="10dp"
+                    android:text="@{String.valueOf(viewModel.entrees[1].price)}" />
 
                 <RadioButton
-                    android:id="@+id/radioButton3"
+                    android:id="@+id/entree_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="RadioButton" />
+                    android:checked="@{viewModel.entree.equals(viewModel.entrees[2])}"
+                    android:onClick="@{() -> viewModel.setEntree(viewModel.entrees[2])}"
+                    android:text="@{viewModel.entrees[2].name}" />
 
                 <TextView
-                    android:id="@+id/textView7"
+                    android:id="@+id/ing_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:layout_marginStart="10dp"
+                    android:text="@{viewModel.entrees[2].ingredients}" />
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/price_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:layout_marginStart="10dp"
+                    android:text="@{String.valueOf(viewModel.entrees[2].price)}" />
 
                 <RadioButton
-                    android:id="@+id/radioButton4"
+                    android:id="@+id/entree_3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="RadioButton" />
+                    android:checked="@{viewModel.entree.equals(viewModel.entrees[3])}"
+                    android:onClick="@{() -> viewModel.setEntree(viewModel.entrees[3])}"
+                    android:text="@{viewModel.entrees[3].name}" />
 
                 <TextView
-                    android:id="@+id/textView6"
+                    android:id="@+id/ing_3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:layout_marginStart="10dp"
+                    android:text="@{viewModel.entrees[3].ingredients}" />
 
                 <TextView
-                    android:id="@+id/textView9"
+                    android:id="@+id/price_3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
-
+                    android:layout_marginStart="10dp"
+                    android:text="@{String.valueOf(viewModel.entrees[3].price)}" />
             </RadioGroup>
 
             <TextView
@@ -108,7 +130,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:text="@string/subtotal"
+                android:text="@{@string/subtotal(viewModel.price)}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/entree_radio_group" />
 

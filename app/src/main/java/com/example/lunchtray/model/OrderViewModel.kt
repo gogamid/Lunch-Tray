@@ -36,11 +36,16 @@ class OrderViewModel : ViewModel() {
     _entree.value = entrees[0]
     _sideDish.value = sideDishes[0]
     _accompaniment.value = accompaniments[0]
-    _price.value = entrees[0].price
+//    _price.value = entrees[0].price
   }
 
   fun setEntree(entree: Entree) {
     _entree.value = entree
-    _price.value = entree.price
+//    _price.value = entree.price
+  }
+
+  fun setSideDish(sideDish: SideDish) {
+    _sideDish.value = sideDish
+//    _price.value = _price.value?.plus(sideDish.price)
   }
 }

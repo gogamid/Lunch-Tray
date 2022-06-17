@@ -9,7 +9,9 @@
             name="accompanimentFragment"
             type="com.example.lunchtray.AccompanimentFragment" />
 
-
+        <variable
+            name="viewModel"
+            type="com.example.lunchtray.model.OrderViewModel" />
     </data>
 
     <ScrollView
@@ -31,58 +33,71 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <RadioButton
-                    android:id="@+id/radioButton"
+                    android:id="@+id/acc_0"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Summer Salad" />
+                    android:checked="@{viewModel.accompaniment.equals(viewModel.accompaniments[0])}"
+                    android:onClick="@{() -> viewModel.setAccompaniment(viewModel.accompaniments[0])}"
+                    android:text="@{viewModel.accompaniments[0].name}" />
 
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/ing_0"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:layout_marginStart="10dp"
+                    android:text="@{viewModel.accompaniments[0].ingredients}" />
 
                 <TextView
-                    android:id="@+id/textView3"
+                    android:id="@+id/price_0"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:layout_marginStart="10dp"
+                    android:text="@{String.valueOf(viewModel.accompaniments[0].price)}" />
 
                 <RadioButton
-                    android:id="@+id/radioButton2"
+                    android:id="@+id/acc_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="RadioButton" />
+                    android:checked="@{viewModel.accompaniment.equals(viewModel.accompaniments[1])}"
+                    android:onClick="@{() -> viewModel.setAccompaniment(viewModel.accompaniments[1])}"
+                    android:text="@{viewModel.accompaniments[1].name}" />
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/ing_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:layout_marginStart="10dp"
+                    android:text="@{viewModel.accompaniments[1].ingredients}" />
 
                 <TextView
-                    android:id="@+id/textView5"
+                    android:id="@+id/price_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:layout_marginStart="10dp"
+                    android:text="@{String.valueOf(viewModel.accompaniments[1].price)}" />
+
 
                 <RadioButton
-                    android:id="@+id/radioButton3"
+                    android:id="@+id/acc_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="RadioButton" />
+                    android:checked="@{viewModel.accompaniment.equals(viewModel.accompaniments[2])}"
+                    android:onClick="@{() -> viewModel.setAccompaniment(viewModel.accompaniments[2])}"
+                    android:text="@{viewModel.accompaniments[2].name}" />
 
                 <TextView
-                    android:id="@+id/textView7"
+                    android:id="@+id/ing_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:layout_marginStart="10dp"
+                    android:text="@{viewModel.accompaniments[2].ingredients}" />
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/price_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:layout_marginStart="10dp"
+                    android:text="@{String.valueOf(viewModel.accompaniments[2].price)}" />
             </RadioGroup>
 
             <TextView
@@ -90,7 +105,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:text="@string/subtotal"
+                android:text="@{@string/subtotal(0)}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/accompaniment_radio_group" />
 

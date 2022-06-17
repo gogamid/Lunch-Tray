@@ -48,4 +48,8 @@ class OrderViewModel : ViewModel() {
     _sideDish.value = sideDish
 //    _price.value = _price.value?.plus(sideDish.price)
   }
+
+  fun setAccompaniment(accompaniment: Accompaniment) {
+    _accompaniment.value = accompaniment
+  }
 }

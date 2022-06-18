@@ -117,6 +117,7 @@
                 android:layout_margin="20dp"
                 android:onClick="@{() -> accompanimentFragment.cancelOrder()}"
                 android:text="@string/cancel"
+                style="?attr/materialButtonOutlinedStyle"
                 app:layout_constraintEnd_toStartOf="@+id/next_button"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/subtotal" />

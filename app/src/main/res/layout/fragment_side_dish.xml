@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".SideDishFragment">
 
     <data>
 
@@ -18,25 +19,24 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".SideDishFragment">
+        android:layout_height="match_parent">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:padding="16dp">
 
             <RadioGroup
                 android:id="@+id/side_radio_group"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <RadioButton
                     android:id="@+id/side_0"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="@{viewModel.sideDish.equals(viewModel.sideDishes[0])}"
                     android:onClick="@{() -> viewModel.setSideDish(viewModel.sideDishes[0])}"
@@ -44,7 +44,7 @@
 
                 <TextView
                     android:id="@+id/ing_0"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:text="@{viewModel.sideDishes[0].ingredients}" />
@@ -54,7 +54,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="8dp"
                     android:text="@{viewModel.getPriceWithCurrency(viewModel.sideDishes[0].price)}" />
+
+                <View
+                    android:id="@+id/horizontal_line_d0"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="8dp"
+                    android:background="?attr/dividerHorizontal"
+                    app:layout_constraintTop_toBottomOf="@+id/price_0" />
 
                 <RadioButton
                     android:id="@+id/side_1"
@@ -66,7 +75,7 @@
 
                 <TextView
                     android:id="@+id/ing_1"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:text="@{viewModel.sideDishes[1].ingredients}" />
@@ -76,11 +85,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="8dp"
                     android:text="@{viewModel.getPriceWithCurrency(viewModel.sideDishes[1].price)}" />
+
+                <View
+                    android:id="@+id/horizontal_line_d1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="8dp"
+                    android:background="?attr/dividerHorizontal"
+                    app:layout_constraintTop_toBottomOf="@+id/price_1" />
 
                 <RadioButton
                     android:id="@+id/side_2"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="@{viewModel.sideDish.equals(viewModel.sideDishes[2])}"
                     android:onClick="@{() -> viewModel.setSideDish(viewModel.sideDishes[2])}"
@@ -88,7 +106,7 @@
 
                 <TextView
                     android:id="@+id/ing_2"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:text="@{viewModel.sideDishes[2].ingredients}" />
@@ -98,7 +116,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="8dp"
                     android:text="@{viewModel.getPriceWithCurrency(viewModel.sideDishes[2].price)}" />
+
+                <View
+                    android:id="@+id/horizontal_line_d2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="8dp"
+                    android:background="?attr/dividerHorizontal"
+                    app:layout_constraintTop_toBottomOf="@+id/price_2" />
 
                 <RadioButton
                     android:id="@+id/side_3"
@@ -110,7 +137,7 @@
 
                 <TextView
                     android:id="@+id/ing_3"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:text="@{viewModel.sideDishes[3].ingredients}" />
@@ -120,7 +147,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="8dp"
                     android:text="@{viewModel.getPriceWithCurrency(viewModel.sideDishes[3].price)}" />
+
+                <View
+                    android:id="@+id/horizontal_line_d3"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="8dp"
+                    android:background="?attr/dividerHorizontal"
+                    app:layout_constraintTop_toBottomOf="@+id/price_3" />
 
             </RadioGroup>
 
@@ -128,8 +164,9 @@
                 android:id="@+id/subtotal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
+                android:layout_marginTop="16dp"
                 android:text="@{@string/subtotal(viewModel.price)}"
+                android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/side_radio_group" />
 

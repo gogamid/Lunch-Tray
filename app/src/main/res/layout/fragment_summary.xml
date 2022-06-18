@@ -9,6 +9,10 @@
             name="summaryFragment"
             type="com.example.lunchtray.SummaryFragment" />
 
+        <variable
+            name="viewModel"
+            type="com.example.lunchtray.model.OrderViewModel" />
+
     </data>
 
     <ScrollView
@@ -32,7 +36,7 @@
                 android:id="@+id/menu_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Three Been Chili"
+                android:text="@{viewModel.entree.name}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/order_summary" />
 
@@ -40,7 +44,7 @@
                 android:id="@+id/price_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Price 1"
+                android:text="@{String.valueOf(viewModel.entree.price)}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/order_summary" />
 
@@ -48,7 +52,7 @@
                 android:id="@+id/menu_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Menu 2"
+                android:text="@{viewModel.sideDish.name}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/menu_1" />
 
@@ -56,7 +60,7 @@
                 android:id="@+id/price_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Price 2"
+                android:text="@{String.valueOf(viewModel.sideDish.price)}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/menu_1" />
 
@@ -64,7 +68,7 @@
                 android:id="@+id/menu_3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Menu 3"
+                android:text="@{viewModel.accompaniment.name}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/menu_2" />
 
@@ -72,7 +76,7 @@
                 android:id="@+id/price_3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Price 3"
+                android:text="@{String.valueOf(viewModel.accompaniment.price)}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/menu_2" />
 
@@ -89,7 +93,7 @@
                 android:id="@+id/subtotal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/subtotal"
+                android:text="@{@string/subtotal(viewModel.price)}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/horizontal_line_d" />
 
@@ -97,7 +101,7 @@
                 android:id="@+id/tax"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/tax"
+                android:text="@{@string/tax(viewModel.tax)}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/subtotal" />
 
@@ -105,7 +109,7 @@
                 android:id="@+id/total"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/total"
+                android:text="@{@string/total(viewModel.total)}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tax" />
 

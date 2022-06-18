@@ -9,7 +9,7 @@ class Datasource {
   fun getEntrees(): List<Entree> = listOf(
     Entree(
       "Cauliflower",
-      "Whole cauliflour, brined, roasted, and deeo fried",
+      "Whole cauliflower, brined, roasted, and deep fried",
       7.0
     ),
     Entree(
@@ -20,12 +20,12 @@ class Datasource {
 
     Entree(
       "Mushroom Pasta",
-      "sdfas",
+      "Penne pasta, mushrooms, basil, with plum tomatoes cooked in garlic and olive oil",
       3.0
     ),
     Entree(
       "Spicy Black Bean Skillet",
-      "sdfa",
+      "Seasonal vegetables, black beans, house spice blend, served with avocado and quick pickled onions",
       2.0
     )
   )
@@ -33,22 +33,22 @@ class Datasource {
   fun getSideDishes(): List<SideDish> = listOf(
     SideDish(
       "Summer Salad",
-      "dasjkljflöjdslöfajöksadljöl",
+      "Heirloom tomatoes, butter lettuce, peaches, avocado, balsamic dressing",
       2.5
     ),
     SideDish(
       "Butternut",
-      "fdsajfldja",
+      "Roasted butternut squash, roasted peppers, chili oil",
       3.0
     ),
     SideDish(
       "Spicy Potatoes",
-      "dlkfsjalkjdf",
+      "Marble potatoes, roasted, and fried in house spice blend",
       2.0
     ),
     SideDish(
       "Coconut Rice",
-      "lksadjflkjha",
+      "Rice, coconut milk, lime, and sugar",
       1.5
     )
   )
@@ -56,17 +56,17 @@ class Datasource {
   fun getAccompaniments(): List<Accompaniment> = listOf(
     Accompaniment(
       "Lunch Roll",
-      "dsahfash",
+      "Fresh baked roll made in house",
       0.5
     ),
     Accompaniment(
       "Mixed Berries",
-      "dsahfash",
+      "Strawberries, blueberries, raspberries, and huckleberries",
       1.0
     ),
     Accompaniment(
       "Pickled Veggies",
-      "dsahfash",
+      "Pickled cucumbers and carrots, made in house",
       0.5
     )
   )

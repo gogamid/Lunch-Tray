@@ -6,10 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.lunchtray.databinding.FragmentStartOrderBinding
+import com.example.lunchtray.model.OrderViewModel
 
 class StartOrderFragment : Fragment() {
+  private val sharedViewModel: OrderViewModel by activityViewModels()
   private lateinit var binding: FragmentStartOrderBinding
   override fun onCreateView(
     inflater: LayoutInflater,
@@ -25,7 +28,8 @@ class StartOrderFragment : Fragment() {
     binding.startOrderFragment = this
   }
 
-  fun nextScreen(){
+  fun nextScreen() {
+    sharedViewModel.resetOrder()
     this.findNavController().navigate(R.id.action_startOrderFragment_to_entreeFragment)
   }
 }

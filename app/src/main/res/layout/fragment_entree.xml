@@ -40,7 +40,7 @@
                     android:checked="@{viewModel.entree.equals(viewModel.entrees[0])}"
                     android:onClick="@{() -> viewModel.setEntree(viewModel.entrees[0])}"
                     android:text="@{viewModel.entrees[0].name}"
-                    tools:text="Cauliflour" />
+                    tools:text="Cauliflower" />
 
                 <TextView
                     android:id="@+id/ing_0"

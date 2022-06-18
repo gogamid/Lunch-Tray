@@ -73,4 +73,6 @@ class OrderViewModel : ViewModel() {
     _accompaniment.value = accompaniment
     updatePrice()
   }
+
+  fun getPriceWithCurrency(value: Double) = NumberFormat.getCurrencyInstance().format(value)
 }

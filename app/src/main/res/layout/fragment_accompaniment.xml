@@ -52,7 +52,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:text="@{String.valueOf(viewModel.accompaniments[0].price)}" />
+                    android:text="@{viewModel.getPriceWithCurrency(viewModel.accompaniments[0].price)}" />
 
                 <RadioButton
                     android:id="@+id/acc_1"
@@ -74,7 +74,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:text="@{String.valueOf(viewModel.accompaniments[1].price)}" />
+                    android:text="@{viewModel.getPriceWithCurrency(viewModel.accompaniments[1].price)}" />
 
 
                 <RadioButton
@@ -97,7 +97,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:text="@{String.valueOf(viewModel.accompaniments[2].price)}" />
+                    android:text="@{viewModel.getPriceWithCurrency(viewModel.accompaniments[2].price)}" />
             </RadioGroup>
 
             <TextView

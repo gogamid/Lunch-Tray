@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/startOrderFragment"
         android:name="com.example.lunchtray.StartOrderFragment"
-        android:label="Lunch Tray"
+        android:label="@string/app_name"
         tools:layout="@layout/fragment_start_order">
         <action
             android:id="@+id/action_startOrderFragment_to_entreeFragment"
@@ -17,7 +17,7 @@
     <fragment
         android:id="@+id/entreeFragment"
         android:name="com.example.lunchtray.EntreeFragment"
-        android:label="Select Entree"
+        android:label="@string/app_name"
         tools:layout="@layout/fragment_entree">
         <action
             android:id="@+id/action_entreeFragment_to_sideDishFragment"
@@ -31,7 +31,7 @@
     <fragment
         android:id="@+id/sideDishFragment"
         android:name="com.example.lunchtray.SideDishFragment"
-        android:label="Select Side Dish"
+        android:label="@string/app_name"
         tools:layout="@layout/fragment_side_dish">
         <action
             android:id="@+id/action_sideDishFragment_to_accompanimentFragment"
@@ -45,7 +45,7 @@
     <fragment
         android:id="@+id/accompanimentFragment"
         android:name="com.example.lunchtray.AccompanimentFragment"
-        android:label="Select Accompaniment">
+        android:label="@string/app_name">
         <action
             android:id="@+id/action_accompanimentFragment_to_summaryFragment"
             app:destination="@id/summaryFragment" />
@@ -58,7 +58,7 @@
     <fragment
         android:id="@+id/summaryFragment"
         android:name="com.example.lunchtray.SummaryFragment"
-        android:label="Order Summary">
+        android:label="@string/app_name">
         <action
             android:id="@+id/action_summaryFragment_to_startOrderFragment"
             app:destination="@id/startOrderFragment"

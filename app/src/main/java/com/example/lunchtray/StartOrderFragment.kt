@@ -30,6 +30,7 @@ class StartOrderFragment : Fragment() {
 
   fun nextScreen() {
     sharedViewModel.resetOrder()
+    sharedViewModel.setFirstEntree()
     this.findNavController().navigate(R.id.action_startOrderFragment_to_entreeFragment)
   }
 }

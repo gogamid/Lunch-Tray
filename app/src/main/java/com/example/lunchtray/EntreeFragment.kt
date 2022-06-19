@@ -33,6 +33,7 @@ class EntreeFragment : Fragment() {
   }
 
   fun nextScreen() {
+    sharedViewModel.setFirstSideDish()
     this.findNavController().navigate(R.id.action_entreeFragment_to_sideDishFragment)
   }
 

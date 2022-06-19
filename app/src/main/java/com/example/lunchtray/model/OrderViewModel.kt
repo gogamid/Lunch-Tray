@@ -74,5 +74,17 @@ class OrderViewModel : ViewModel() {
     updatePrice()
   }
 
-  fun getPriceWithCurrency(value: Double) = NumberFormat.getCurrencyInstance().format(value)
+  fun getPriceWithCurrency(value: Double): String = NumberFormat.getCurrencyInstance().format(value)
+
+  fun setFirstEntree() {
+    setEntree(entrees[0])
+  }
+
+  fun setFirstSideDish() {
+    setSideDish(sideDishes[0])
+  }
+
+  fun setFirstAccompaniment() {
+    setAccompaniment(accompaniments[0])
+  }
 }

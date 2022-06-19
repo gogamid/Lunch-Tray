@@ -33,6 +33,7 @@ class SideDishFragment : Fragment() {
   }
 
   fun nextScreen() {
+    sharedViewModel.setFirstAccompaniment()
     this.findNavController().navigate(R.id.action_sideDishFragment_to_accompanimentFragment)
   }
 

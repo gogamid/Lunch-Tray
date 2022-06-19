@@ -1,7 +1,7 @@
 package com.example.lunchtray
 
-import androidx.fragment.app.testing.FragmentScenario
 import androidx.fragment.app.testing.launchFragmentInContainer
+import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.testing.TestNavHostController
 import androidx.test.core.app.ApplicationProvider
@@ -13,27 +13,26 @@ import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
+import org.mockito.Mockito.mock
+import org.mockito.Mockito.verify
 
 @RunWith(AndroidJUnit4::class)
 class NavigationComponentTests {
   lateinit var navController: TestNavHostController
-  private lateinit var startOrderScenario: FragmentScenario<StartOrderFragment>
 
   @Before
   fun setup() {
     navController = TestNavHostController(ApplicationProvider.getApplicationContext())
-    startOrderScenario =
-      launchFragmentInContainer(themeResId = R.style.Theme_LunchTray)
+  }
+
+  @Test
+  fun testNavigationToEntreeScreen() {
+    val startOrderScenario = launchFragmentInContainer<StartOrderFragment>()
     startOrderScenario.onFragment { fragment ->
       navController.setGraph(R.navigation.nav_graph)
       Navigation.setViewNavController(fragment.requireView(), navController)
     }
-  }
-
-  @Test
-  fun navigation_to_entree_nav_component() {
-    onView(withId(R.id.start_order_button))
-      .perform(click())
+    onView(withId(R.id.start_order_button)).perform(click())
     assertEquals(navController.currentDestination?.id, R.id.entreeFragment)
   }
 }

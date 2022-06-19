@@ -1,12 +1,19 @@
 package com.example.lunchtray
 
+import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.action.ViewActions.click
+import androidx.test.espresso.assertion.ViewAssertions.matches
+import androidx.test.espresso.matcher.ViewMatchers.*
+import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import org.hamcrest.CoreMatchers.containsString
 
 import org.junit.Test
 import org.junit.runner.RunWith
 
 import org.junit.Assert.*
+import org.junit.Rule
 
 /**
  * Instrumented test, which will execute on an Android device.
@@ -15,10 +22,27 @@ import org.junit.Assert.*
  */
 @RunWith(AndroidJUnit4::class)
 class ExampleInstrumentedTest {
+
+  @get:Rule()
+  val activity = ActivityScenarioRule(MainActivity::class.java)
+
   @Test
-  fun useAppContext() {
-    // Context of the app under test.
-    val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-    assertEquals("com.example.lunchtray", appContext.packageName)
+  fun calculate_default_meals_price() {
+    onView(withId(R.id.start_order_button))
+      .perform(click())
+    onView(withId(R.id.subtotal))
+      .check(matches(withSubstring("7,00")))
+    onView(withId(R.id.next_button))
+      .perform(click())
+    onView(withId(R.id.subtotal))
+      .check(matches(withSubstring("9,50")))
+    onView(withId(R.id.next_button))
+      .perform(click())
+    onView(withId(R.id.subtotal))
+      .check(matches(withSubstring("10,00")))
+    onView(withId(R.id.next_button))
+      .perform(click())
+    onView(withId(R.id.total))
+      .check(matches(withSubstring("10,84")))
   }
 }

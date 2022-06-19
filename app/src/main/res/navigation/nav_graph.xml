@@ -24,7 +24,9 @@
             app:destination="@id/sideDishFragment" />
         <action
             android:id="@+id/action_entreeFragment_to_startOrderFragment"
-            app:destination="@id/startOrderFragment" />
+            app:destination="@id/startOrderFragment"
+            app:popUpTo="@id/startOrderFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/sideDishFragment"
@@ -36,7 +38,9 @@
             app:destination="@id/accompanimentFragment" />
         <action
             android:id="@+id/action_sideDishFragment_to_startOrderFragment"
-            app:destination="@id/startOrderFragment" />
+            app:destination="@id/startOrderFragment"
+            app:popUpTo="@id/startOrderFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/accompanimentFragment"
@@ -47,7 +51,9 @@
             app:destination="@id/summaryFragment" />
         <action
             android:id="@+id/action_accompanimentFragment_to_startOrderFragment"
-            app:destination="@id/startOrderFragment" />
+            app:destination="@id/startOrderFragment"
+            app:popUpTo="@id/startOrderFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/summaryFragment"
@@ -55,6 +61,8 @@
         android:label="Order Summary">
         <action
             android:id="@+id/action_summaryFragment_to_startOrderFragment"
-            app:destination="@id/startOrderFragment" />
+            app:destination="@id/startOrderFragment"
+            app:popUpTo="@id/startOrderFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>
